@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tampered Images</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url("1746017.jpg"); /* Change the URL to your desired background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-item {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+        .nav-item1 {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .nav-item1 a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .main-fun {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Adjust according to the height of your header */
+            
+            z-index: ;
+        }
+        .main1 {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the main content */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .uploadform input[type="file"] {
+            margin-bottom: 10px;
+        }
+        .uploadform input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .uploadform input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Chatbot CSS styles */
+        .chat-container {
+            display: none; /* Initially hidden */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+            background-color: #fff;
+        }
+        .chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .chat-body {
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .chat-input {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-top: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .open-chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure button appears above chat container */
+        }
+    </style>
+</head>
+<body>
+   <header class="navbar">
+        <ul class="nav-item">
+            <li class="nav-item1"><a href="login.html">log in</a></li>
+        </ul>
+    </header>
+    <main class="main-fun">
+        <div class="main1">
+            <label>Tampered Images</label>
+            <div>
+                <form class="uploadform">
+                    <input type="file" name="image"><br>
+                    <input type="submit" value="Upload" class="formsubmit">
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Button to open chat -->
+    <button class="open-chat-btn" onclick="toggleChat()">Open Chat</button>
+
+    <!-- Chatbot Container -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">Chatbot</div>
+        <div class="chat-body">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" class="chat-input" placeholder="Type your message...">
+    </div>
+
+    <!-- JavaScript to toggle chat visibility -->
+    <script>
+        function toggleChat() {
+            var chatContainer = document.getElementById("chat-container");
+            if (chatContainer.style.display === "none") {
+                chatContainer.style.display = "block";
+            } else {
+                chatContainer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
